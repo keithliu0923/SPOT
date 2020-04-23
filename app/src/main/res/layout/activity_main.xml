@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,38 +11,81 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="617dp"
         android:layout_above="@+id/send_message_layput"
-        android:divider="@null"/>
+        android:layout_marginBottom="-8dp"
+        android:divider="@null">
 
-        <LinearLayout
-            android:id="@+id/send_message_layput"
-            android:layout_width="match_parent"
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/send_message_layput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/bot" />
+
+        <EditText
+            android:id="@+id/edtTextMsg"
+            android:layout_width="276dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-            android:gravity="center_vertical">
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:autofillHints="" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:src="@drawable/bot"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:contentDescription="@string/todo" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_send_24dp" />
+    </LinearLayout>
 
-            <EditText
-                android:id="@+id/edtTextMsg"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:autofillHints="" />
+    <Button
+        android:id="@+id/btn_small"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="S" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnSend"
-                android:src="@drawable/ic_send_24dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
+    <Button
+        android:id="@+id/btn_medium"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/btn_small"
+        android:text="M" />
+
+    <Button
+        android:id="@+id/btn_large"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/btn_medium"
+        android:text="L" />
+
+    <Switch
+        android:id="@+id/sw_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:text="Dark" />
 </RelativeLayout>

@@ -1,17 +1,22 @@
 package FYP.SPOT;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.content.res.AssetManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.karumi.dexter.Dexter;
@@ -21,7 +26,6 @@ import com.karumi.dexter.listener.DexterError;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.PermissionRequestErrorListener;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
-
 
 import org.alicebot.ab.AIMLProcessor;
 import org.alicebot.ab.Bot;
@@ -43,27 +47,75 @@ import FYP.SPOT.Model.ChatMessage;
 public class MainActivity extends AppCompatActivity {
 
 
-    ListView listView;
-    FloatingActionButton btnSend;
-    EditText edtTextMag;
-    ImageView imageView;
+    private ListView listView;
+    private FloatingActionButton btnSend;
+    private EditText edtTextMag;
+    private ImageView imageView;
+    public Button btn_small, btn_medium, btn_large;
+    private Switch dark;
 
     private Bot bot;
     public static Chat chat;
     private ChatmessageAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         listView = findViewById(R.id.listView);
         btnSend = findViewById(R.id.btnSend);
         edtTextMag = findViewById(R.id.edtTextMsg);
         imageView = findViewById(R.id.imageView);
+        btn_small = findViewById(R.id.btn_small);
+        btn_medium = findViewById(R.id.btn_medium);
+        btn_large = findViewById(R.id.btn_large);
+        dark = findViewById(R.id.sw_dark);
+        final RelativeLayout background = findViewById(R.id.background);
 
         adapter = new ChatmessageAdapter(this,new ArrayList<ChatMessage>());
         listView.setAdapter(adapter);
+
+        // Small size word
+        btn_small.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtTextMag.setTextSize(10);
+            }
+        });
+        // Medium size word
+        btn_medium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtTextMag.setTextSize(20);
+            }
+        });
+        // Large size word
+        btn_large.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtTextMag.setTextSize(30);
+            }
+        });
+
+
+        //Dark mode switch
+        dark.setChecked(false);
+        dark.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    listView.setBackgroundColor(Color.DKGRAY);
+                    background.setBackgroundColor(Color.DKGRAY);
+                    dark.setTextColor(Color.WHITE);
+                } else {
+                    listView.setBackgroundColor(Color.WHITE);
+                    background.setBackgroundColor(Color.WHITE);
+                    dark.setTextColor(Color.BLACK);
+                }
+            }
+        });
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,4 +228,7 @@ public class MainActivity extends AppCompatActivity {
         ChatMessage chatMessage = new ChatMessage(false, true, message);
         adapter.add(chatMessage);
     }
+
+
 }
+
