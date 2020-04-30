@@ -27,7 +27,7 @@ public class Loginpage extends AppCompatActivity {
             Info = (TextView)findViewById(R.id.tvInfo);
             Login = (Button)findViewById(R.id.btnLogin);
 
-            Info.setText("Sorry, you entered an invalid Student / Teacher No. or Password, please try again. No of incorrect attempts: 5");
+            Info.setText("** 5 attempts left **");
 
             Login.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -44,7 +44,7 @@ public class Loginpage extends AppCompatActivity {
             }else{
                 counter--;
 
-                Info.setText("Sorry, you entered an invalid Student / Teacher No. or Password, please try again. No of incorrect attempts: " + String.valueOf(counter));
+                Info.setText("**" + String.valueOf(counter) + " Attempts left **" );
 
                 if(counter == 0){
                     Login.setEnabled(false);
