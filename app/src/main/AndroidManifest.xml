@@ -18,12 +18,10 @@
         <activity android:name=".Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Loginpage"></activity>
+        <activity android:name=".Loginpage" />
         <activity android:name=".MainActivity" />
     </application>
-
 </manifest>

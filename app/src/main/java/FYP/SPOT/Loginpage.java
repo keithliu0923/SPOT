@@ -20,7 +20,7 @@ public class Loginpage extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_loginpage);
 
             Name = (EditText)findViewById(R.id.etName);
             Password = (EditText)findViewById(R.id.etPassword);
@@ -38,7 +38,7 @@ public class Loginpage extends AppCompatActivity {
         }
 
         private void validate(String userName, String userPassword){
-            if((userName.equals("Admin")) && (userPassword.equals("1234"))){
+            if((userName.equals("20023919")) && (userPassword.equals("20023919"))){
                 Intent intent = new Intent(Loginpage.this, MainActivity.class);
                 startActivity(intent);
             }else{
