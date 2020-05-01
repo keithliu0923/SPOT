@@ -28,7 +28,7 @@ public class Splashscreen extends AppCompatActivity {
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                startActivity(new Intent(Splashscreen.this, MainActivity.class));
+                startActivity(new Intent(Splashscreen.this, Loginpage.class));
                 finish();
             }
         });
