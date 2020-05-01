@@ -38,7 +38,7 @@ public class Loginpage extends AppCompatActivity {
         }
 
         private void validate(String userName, String userPassword){
-            if((userName.equals("20023919")) && (userPassword.equals("20023919"))){
+            if((userName.equals("20023919")) && (userPassword.equals("20023919"))||(userName.equals("20090059")) && (userPassword.equals("20090059"))||(userName.equals("20091368")) && (userPassword.equals("20091368"))||(userName.equals("20093274")) && (userPassword.equals("20093274"))||(userName.equals("20079484")) && (userPassword.equals("20079484"))){
                 Intent intent = new Intent(Loginpage.this, MainActivity.class);
                 startActivity(intent);
             }else{
