@@ -91,22 +91,19 @@ public class MainActivity extends AppCompatActivity {
         btn_small.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                edtTextMag.setTextSize(10);
+                edtTextMag.setTextSize(getResources().getDimension(R.dimen.small));
             }
         });
         // Medium size word
         btn_medium.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-
-                edtTextMag.setTextSize(20);
+                edtTextMag.setTextSize(getResources().getDimension(R.dimen.medium));
             }
         });
         // Large size word
         btn_large.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                edtTextMag.setTextSize(30);
+                edtTextMag.setTextSize(getResources().getDimension(R.dimen.large));
             }
         });
 
