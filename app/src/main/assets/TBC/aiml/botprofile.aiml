@@ -6,7 +6,7 @@
     </category>
     <category>
         <pattern>When will the schedule swap exercise hold?</pattern>
-        <template>It depands, last year was 3 Sep 4:30 pm. Please check Learner Portal for the latest info.</template>
+        <template>It depends, last year was 3 Sep 4:30 pm. Please check Learner Portal for the latest info.</template>
     </category>
     <category>
         <pattern>Where is Dominic’s temple?</pattern>
@@ -91,7 +91,7 @@ to teaching, learning and support services.
     </category>
     <category>
         <pattern>Is that means there need to have enough quota if we want to swap our class successfully？</pattern>
-        <template>Yes, every classroom will have their limition of seats.</template>
+        <template>Yes, every classroom will have their limitation of seats.</template>
     </category>
     <category>
         <pattern>What is myFuture for?</pattern>
@@ -116,10 +116,10 @@ to teaching, learning and support services.
     </category>
     <category>
         <pattern>Do we need to print our own notes?</pattern>
-        <template>Uauslly teacher will prepared a powerpoint file for us on soul, some lecture may even print it out to us.</template>
+        <template>Usually teacher will prepared a powerpoint file for us on soul, some lecture may even print it out to us.</template>
     </category>
     <category>
-        <pattern>Where can i get a locker? </pattern>
+        <pattern>Where can i get a locker?</pattern>
         <template>You can go to Myfuture to registration a locker</template>
     </category>
     <category>
@@ -135,7 +135,7 @@ to teaching, learning and support services.
         <template>Yes. During the add drop period, attendance will not be counted. But the lecturer will still teach their class and notes. It is better to attend lectures on time If you do not want to miss anything.</template>
     </category>
     <category>
-        <pattern>CIT centre is also located in Kowloonbay?</pattern>
+        <pattern>CIT centre is also located in Kowloon bay?</pattern>
         <template>Yes.It is located in 63 Tai Yip Street, Kowloon Bay, Kowloon (Exit A, Kowloon Bay MTR Station)</template>
     </category>
     <category>
