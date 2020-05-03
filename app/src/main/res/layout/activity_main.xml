@@ -8,16 +8,17 @@
     android:paddingTop="16dp"
     tools:context=".MainActivity">
 
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="617dp"
         android:layout_above="@+id/send_message_layput"
-        android:layout_marginBottom="-8dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-13dp"
         android:divider="@null">
 
     </ListView>
-
 
     <LinearLayout
         android:id="@+id/send_message_layput"
