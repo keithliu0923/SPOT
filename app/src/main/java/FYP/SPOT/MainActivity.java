@@ -46,6 +46,8 @@ import java.util.List;
 import FYP.SPOT.Adapter.ChatmessageAdapter;
 import FYP.SPOT.Model.ChatMessage;
 
+//import android.widget.TextView;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -59,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
     private Bot bot;
     public static Chat chat;
     private ChatmessageAdapter adapter;
+
+    private String message = ChatMessage.content;
+
 
 
     @Override
@@ -80,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ChatmessageAdapter(this,new ArrayList<ChatMessage>());
         listView.setAdapter(adapter);
 
+        //change font size
+
         // Small size word
         btn_small.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,14 +96,15 @@ public class MainActivity extends AppCompatActivity {
         });
         // Medium size word
         btn_medium.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
+
                 edtTextMag.setTextSize(20);
             }
         });
         // Large size word
         btn_large.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
                 edtTextMag.setTextSize(30);
             }
@@ -111,10 +119,12 @@ public class MainActivity extends AppCompatActivity {
                     listView.setBackgroundColor(Color.DKGRAY);
                     background.setBackgroundColor(Color.DKGRAY);
                     dark.setTextColor(Color.WHITE);
+                    edtTextMag.setTextColor(Color.WHITE);
                 } else {
                     listView.setBackgroundColor(Color.WHITE);
                     background.setBackgroundColor(Color.WHITE);
                     dark.setTextColor(Color.BLACK);
+                    edtTextMag.setTextColor(Color.BLACK);
                 }
             }
         });

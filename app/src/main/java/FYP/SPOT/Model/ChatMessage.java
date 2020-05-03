@@ -2,7 +2,7 @@ package FYP.SPOT.Model;
 
 public class ChatMessage {
     private boolean isImage, isMine;
-    private String content;
+    public static String content;
 
     public ChatMessage(boolean isImage, boolean isMine, String content){
         this.isImage = isImage;
