@@ -17,7 +17,7 @@
         app:cmv_backgroundColor="#88BABABA"
         app:cmv_backgroundColorPressed="#FFBABABA"
         app:cmv_contentPadding="10dp"
-        app:cmv_cornerRadius="3dp"
+        app:cmv_cornerRadius="6dp"
         app:cmv_showArrow="true">
 
         <TextView

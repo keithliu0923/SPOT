@@ -46,6 +46,8 @@ import java.util.List;
 import FYP.SPOT.Adapter.ChatmessageAdapter;
 import FYP.SPOT.Model.ChatMessage;
 
+//import android.widget.TextView;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -59,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
     private Bot bot;
     public static Chat chat;
     private ChatmessageAdapter adapter;
+
+    private String message = ChatMessage.content;
+
 
 
     @Override
@@ -80,25 +85,25 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ChatmessageAdapter(this,new ArrayList<ChatMessage>());
         listView.setAdapter(adapter);
 
+        //change font size
+
         // Small size word
         btn_small.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                edtTextMag.setTextSize(10);
+                edtTextMag.setTextSize(getResources().getDimension(R.dimen.small));
             }
         });
         // Medium size word
         btn_medium.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                edtTextMag.setTextSize(20);
+                edtTextMag.setTextSize(getResources().getDimension(R.dimen.medium));
             }
         });
         // Large size word
         btn_large.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                edtTextMag.setTextSize(30);
+                edtTextMag.setTextSize(getResources().getDimension(R.dimen.large));
             }
         });
 
@@ -111,10 +116,12 @@ public class MainActivity extends AppCompatActivity {
                     listView.setBackgroundColor(Color.DKGRAY);
                     background.setBackgroundColor(Color.DKGRAY);
                     dark.setTextColor(Color.WHITE);
+                    edtTextMag.setTextColor(Color.WHITE);
                 } else {
                     listView.setBackgroundColor(Color.WHITE);
                     background.setBackgroundColor(Color.WHITE);
                     dark.setTextColor(Color.BLACK);
+                    edtTextMag.setTextColor(Color.BLACK);
                 }
             }
         });
@@ -139,22 +146,22 @@ public class MainActivity extends AppCompatActivity {
         Dexter.withContext(getApplicationContext())
                 .withPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
                 .withListener(new MultiplePermissionsListener() {
-            @Override
-            public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
-                if (multiplePermissionsReport.areAllPermissionsGranted()) {
-                    custom();
-                    Toast.makeText(MainActivity.this, "Permission Granted..!", Toast.LENGTH_SHORT).show();
-                }
-                if (multiplePermissionsReport.isAnyPermissionPermanentlyDenied()) {
-                    Toast.makeText(MainActivity.this, "Please Grant all the Premissions!!", Toast.LENGTH_SHORT).show();
-                }
-            }
+                    @Override
+                    public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
+                        if (multiplePermissionsReport.areAllPermissionsGranted()) {
+                            custom();
+                            Toast.makeText(MainActivity.this, "Permission Granted..!", Toast.LENGTH_SHORT).show();
+                        }
+                        if (multiplePermissionsReport.isAnyPermissionPermanentlyDenied()) {
+                            Toast.makeText(MainActivity.this, "Please Grant all the Premissions!!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
 
-            @Override
-            public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
-                permissionToken.continuePermissionRequest();
-            }
-        }).withErrorListener(new PermissionRequestErrorListener() {
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
+                        permissionToken.continuePermissionRequest();
+                    }
+                }).withErrorListener(new PermissionRequestErrorListener() {
             @Override
             public void onError(DexterError dexterError) {
                 Toast.makeText(MainActivity.this, ""+dexterError, Toast.LENGTH_SHORT).show();
@@ -239,4 +246,3 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
-

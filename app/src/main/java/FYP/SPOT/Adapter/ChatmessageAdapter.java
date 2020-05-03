@@ -18,8 +18,9 @@ import FYP.SPOT.R;
 
 public class ChatmessageAdapter extends ArrayAdapter<ChatMessage> {
 
-    private static final int MY_MESSAGE = 0;
-    private static final int BOT_MESSAGE = 1;
+    public static final int MY_MESSAGE = 0;
+    public static final int BOT_MESSAGE = 1;
+
     public ChatmessageAdapter(@NonNull Context context, List<ChatMessage> data) {
         super(context, R.layout.user_query_layout,data);
     }
