@@ -146,22 +146,22 @@ public class MainActivity extends AppCompatActivity {
         Dexter.withContext(getApplicationContext())
                 .withPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
                 .withListener(new MultiplePermissionsListener() {
-            @Override
-            public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
-                if (multiplePermissionsReport.areAllPermissionsGranted()) {
-                    custom();
-                    Toast.makeText(MainActivity.this, "Permission Granted..!", Toast.LENGTH_SHORT).show();
-                }
-                if (multiplePermissionsReport.isAnyPermissionPermanentlyDenied()) {
-                    Toast.makeText(MainActivity.this, "Please Grant all the Premissions!!", Toast.LENGTH_SHORT).show();
-                }
-            }
+                    @Override
+                    public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
+                        if (multiplePermissionsReport.areAllPermissionsGranted()) {
+                            custom();
+                            Toast.makeText(MainActivity.this, "Permission Granted..!", Toast.LENGTH_SHORT).show();
+                        }
+                        if (multiplePermissionsReport.isAnyPermissionPermanentlyDenied()) {
+                            Toast.makeText(MainActivity.this, "Please Grant all the Premissions!!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
 
-            @Override
-            public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
-                permissionToken.continuePermissionRequest();
-            }
-        }).withErrorListener(new PermissionRequestErrorListener() {
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
+                        permissionToken.continuePermissionRequest();
+                    }
+                }).withErrorListener(new PermissionRequestErrorListener() {
             @Override
             public void onError(DexterError dexterError) {
                 Toast.makeText(MainActivity.this, ""+dexterError, Toast.LENGTH_SHORT).show();
@@ -246,4 +246,3 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
-
